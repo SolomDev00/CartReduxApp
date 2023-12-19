@@ -1,7 +1,11 @@
 import { NavLink, Link } from "react-router-dom";
 import ImgBag from "../assets/cart.png";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../app/features/cart/cartSlice";
 
 const Navbar = () => {
+  const { cartItems } = useSelector(cartSelector);
+
   return (
     <header className="w-full bg-transparent rounded-md mt-5 mb-10">
       <div className="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center">
@@ -49,18 +53,12 @@ const Navbar = () => {
             >
               Features
             </NavLink>
-            <div className="flex flex-row items-center space-x-2">
+            <NavLink to={"/cart"}>
               <div className="relative mr-4">
                 <img className="w-7 cursor-pointer" src={ImgBag} alt="cart" />
-                <div className="cart">3</div>
+                <div className="cart">{cartItems.length}</div>
               </div>
-              <NavLink
-                to={"/"}
-                className="text-white md:mr-12 rounded-md px-6 py-1 font-medium transition-colors bg-indigo-700 hover:bg-indigo-800 duration-500"
-              >
-                Login
-              </NavLink>
-            </div>
+            </NavLink>
           </ul>
         </nav>
       </div>

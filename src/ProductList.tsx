@@ -5,7 +5,7 @@ import { IProduct } from "./interfaces";
 const ProductList = () => {
   const { isLoading, data } = useCustomQuery({
     queryKey: ["productList"],
-    url: `/products?limit=10&select=title,price,thumbnail`,
+    url: `/products?limit=12&select=title,price,thumbnail`,
   });
 
   if (isLoading) return <h3>Loading...</h3>;

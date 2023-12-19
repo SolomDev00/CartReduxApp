@@ -3,13 +3,13 @@ import { VariantProps, cva } from "class-variance-authority";
 import { HTMLAttributes, ReactNode } from "react";
 
 const buttonVariants = cva(
-  "flex items-center justify-center rounded-md font-medium text-white duration-300 dark:text-black disabled:bg-indigo-400 disabled:hover:bg-indigo-400 disabled:cursor-not-allowed duration-500",
+  "flex items-center justify-center rounded-md font-medium text-white duration-500 dark:text-black disabled:bg-indigo-400 disabled:hover:bg-indigo-400 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
         // ** FILLED
         default:
-          "bg-indigo-900 dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700 duration-500",
+          "bg-indigo-900 dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700",
         danger:
           "bg-red-900 dark:bg-[#c2344d] dark:text-white dark:hover:bg-red-700",
         cancel:
