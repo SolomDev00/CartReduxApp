@@ -42,8 +42,9 @@ button:focus-visible {
   width: 19px;
   height: 19px;
   text-align: center;
-  background-color: #ddb892;
-  color: #7f5539;
+  background-color: #5c7cfa;
+  color: black;
+  font-weight: 600;
   top: 0px;
   right: -9px;
   font-size: 8px;

@@ -18,7 +18,7 @@ const ProductList = () => {
           thumbnail: string;
           price: number;
         }) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard key={product.id} product={product} />
         )
       )}
     </div>

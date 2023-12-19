@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import ImgBag from "../assets/bag.svg";
+import ImgBag from "../assets/cart.png";
 
 const Navbar = () => {
   return (
@@ -39,26 +39,28 @@ const Navbar = () => {
           <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
             <NavLink
               to={"/"}
-              className="text-slate-600 md:mr-12 hover:text-slate-600"
+              className="text-slate-400 md:mr-12 hover:text-slate-600 duration-500"
             >
               Pricing
             </NavLink>
             <NavLink
               to={"/"}
-              className="text-slate-600 md:mr-12 hover:text-slate-600"
+              className="text-slate-400 md:mr-12 hover:text-slate-600 duration-500"
             >
               Features
             </NavLink>
-            <div className="relative">
-              <img className="w-5 cursor-pointer" src={ImgBag} alt="cart" />
-              <div className="cart">3</div>
+            <div className="flex flex-row items-center space-x-2">
+              <div className="relative mr-4">
+                <img className="w-7 cursor-pointer" src={ImgBag} alt="cart" />
+                <div className="cart">3</div>
+              </div>
+              <NavLink
+                to={"/"}
+                className="text-white md:mr-12 rounded-md px-6 py-1 font-medium transition-colors bg-indigo-700 hover:bg-indigo-800 duration-500"
+              >
+                Login
+              </NavLink>
             </div>
-            <NavLink
-              to={"/"}
-              className="text-white md:mr-12 rounded-md px-6 py-1 font-medium transition-colors bg-slate-900 hover:bg-slate-800 duration-500"
-            >
-              Login
-            </NavLink>
           </ul>
         </nav>
       </div>
