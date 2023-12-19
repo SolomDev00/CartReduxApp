@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import ImgBag from "../assets/bag.svg";
 
 const Navbar = () => {
   return (
@@ -48,12 +49,10 @@ const Navbar = () => {
             >
               Features
             </NavLink>
-            <NavLink
-              to={"/"}
-              className="text-slate-600 md:mr-12 hover:text-slate-600"
-            >
-              Cart(0)
-            </NavLink>
+            <div className="relative">
+              <img className="w-5 cursor-pointer" src={ImgBag} alt="cart" />
+              <div className="cart">3</div>
+            </div>
             <NavLink
               to={"/"}
               className="text-white md:mr-12 rounded-md px-6 py-1 font-medium transition-colors bg-slate-900 hover:bg-slate-800 duration-500"

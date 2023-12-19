@@ -12,7 +12,10 @@ const initialState: CartState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-  reducers: {},
+  reducers: {
+    // addItemToCartAction: (state, payload) => {
+    // }
+  },
 });
 
 // export const { increaseAction } = cartSlice.actions;

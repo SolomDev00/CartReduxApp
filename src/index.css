@@ -26,12 +26,27 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.cart {
+  position: absolute;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  background-color: #ddb892;
+  color: #7f5539;
+  top: 0px;
+  right: -9px;
+  font-size: 8px;
 }
 
 @media (prefers-color-scheme: light) {
