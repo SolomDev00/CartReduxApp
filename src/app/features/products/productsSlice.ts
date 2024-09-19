@@ -6,7 +6,8 @@ export const productsApiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com" }),
   endpoints: (builder) => ({
     getProductsList: builder.query({
-      query: () => {
+      query: (arg) => {
+        console.log(arg);
         return {
           url: "/products",
         };

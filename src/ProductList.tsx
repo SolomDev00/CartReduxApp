@@ -5,7 +5,7 @@ import { IProduct } from "./interfaces";
 
 const ProductList = () => {
 
-  const { isLoading, data, error } = useGetProductsListQuery();
+  const { isLoading, data, error } = useGetProductsListQuery([]);
 
   if (isLoading) return <h3>Loading...</h3>;
 
