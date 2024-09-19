@@ -1,19 +1,15 @@
+import { useGetProductsListQuery } from "./app/features/products/productsSlice";
 import ProductCard from "./components/ProductCard";
 import { IProduct } from "./interfaces";
-import { useEffect } from "react";
-import { getProductsList, productsSelector } from "./app/features/products/productsSlice";
-import { useAppDispatch } from "./app/store";
-import { useSelector } from "react-redux";
+
 
 const ProductList = () => {
-  const dispatch = useAppDispatch();
-  const { loading, data, error } = useSelector(productsSelector)
 
-  useEffect(() => {
-    dispatch(getProductsList());
-  }, [dispatch])
+  const { isLoading, data, error } = useGetProductsListQuery();
 
-  if (loading) return <h3>Loading...</h3>;
+  if (isLoading) return <h3>Loading...</h3>;
+
+  if (error) return <h3>Error ya Heart.</h3>;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2 md:gap-4 p-2 rounded-md">
