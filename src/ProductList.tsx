@@ -1,12 +1,21 @@
 import ProductCard from "./components/ProductCard";
 import useCustomQuery from "./hooks/useCustomQuery";
 import { IProduct } from "./interfaces";
+import { useEffect } from "react";
+import { getProductsList } from "./app/features/products/productsSlice";
+import { useAppDispatch } from "./app/store";
 
 const ProductList = () => {
+  const dispatch = useAppDispatch();
+
   const { isLoading, data } = useCustomQuery({
     queryKey: ["productList"],
     url: `/products?limit=12&select=title,price,thumbnail`,
   });
+
+  useEffect(() => {
+    dispatch(getProductsList());
+  }, [dispatch])
 
   if (isLoading) return <h3>Loading...</h3>;
 

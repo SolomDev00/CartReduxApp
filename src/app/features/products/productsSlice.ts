@@ -14,7 +14,7 @@ const initialState: ProductsState = {
   error: null,
 };
 
-const getProductsList = createAsyncThunk(
+export const getProductsList = createAsyncThunk(
   "products/getProductsList",
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
