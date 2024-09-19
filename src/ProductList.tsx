@@ -1,23 +1,19 @@
 import ProductCard from "./components/ProductCard";
-import useCustomQuery from "./hooks/useCustomQuery";
 import { IProduct } from "./interfaces";
 import { useEffect } from "react";
-import { getProductsList } from "./app/features/products/productsSlice";
+import { getProductsList, productsSelector } from "./app/features/products/productsSlice";
 import { useAppDispatch } from "./app/store";
+import { useSelector } from "react-redux";
 
 const ProductList = () => {
   const dispatch = useAppDispatch();
-
-  const { isLoading, data } = useCustomQuery({
-    queryKey: ["productList"],
-    url: `/products?limit=12&select=title,price,thumbnail`,
-  });
+  const { loading, data, error } = useSelector(productsSelector)
 
   useEffect(() => {
     dispatch(getProductsList());
   }, [dispatch])
 
-  if (isLoading) return <h3>Loading...</h3>;
+  if (loading) return <h3>Loading...</h3>;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2 md:gap-4 p-2 rounded-md">
